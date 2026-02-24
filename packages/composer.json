@@ -1,0 +1,17 @@
+{
+  "name": "civicrm/phpmailer-packages",
+  "authors": [
+    {
+      "name": "Tim Otten",
+      "email": "totten@civicrm.org"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "8.1.2"
+    }
+  },
+  "require": {
+    "phpmailer/phpmailer": "^7.0"
+  }
+}
