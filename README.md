@@ -24,7 +24,8 @@ NOTE: If you do not configure `CIVICRM_PHPMAILER_DSN`, then the system will cont
 
 ## Known Issues
 
-* Only mplements FlexMailer support (CiviMail/Mosaico).
+* Only implements FlexMailer support (CiviMail/Mosaico).
+* Need to detect SMTP error codes. (Without this, delivery tracking may be inaccurate.)
 * Does not currently support other use-cases (e.g. transactional-emails). These other use-cases
   may have direct references to PEAR Mail. To convert them, we would need an adapter that
   allows PEAR Mail-consumers to delegate to PHPMailer. (There's a partial/draft implementation using hook_alterMailer.)
