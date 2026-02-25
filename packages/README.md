@@ -25,8 +25,7 @@ The `build.sh` script will run `composer` and `box` to produce a suitable `vendo
 Here is how I typically run it:
 
 ```
-cd packages
-nix-shell --run ./build.sh && rm -rf vendor/
+nix-shell --run ./packages/build.sh && rm -rf packages/vendor/
 ```
 
 ## Limitation
