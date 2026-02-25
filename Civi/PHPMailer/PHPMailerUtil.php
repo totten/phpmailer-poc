@@ -1,13 +1,13 @@
 <?php
 
-namespace Civi\PhpMailer;
+namespace Civi\PHPMailer;
 
 use PHM7\PHPMailer\PHPMailer\DSNConfigurator;
 use PHM7\PHPMailer\PHPMailer\PHPMailer;
 
-class PhpMailerUtil {
+class PHPMailerUtil {
 
-  public static function convertMailParamsToMailer(array $mailParams): PhpMailer {
+  public static function convertMailParamsToMailer(array $mailParams): PHPMailer {
     // The general assumption is that key-value pairs in $mailParams should
     // pass through as email headers, but there are several special-cases
     // (e.g. 'toName', 'toEmail', 'text', 'html', 'attachments', 'headers').

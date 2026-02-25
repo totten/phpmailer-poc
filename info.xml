@@ -42,7 +42,7 @@
     <psr4 prefix="Civi\" path="Civi"/>
   </classloader>
   <civix>
-    <namespace>CRM/Phpmailer</namespace>
+    <namespace>CRM/PHPMailer</namespace>
     <format>25.10.2</format>
     <angularModule>crmPhpmailer</angularModule>
   </civix>

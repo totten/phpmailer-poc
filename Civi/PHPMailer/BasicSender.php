@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace Civi\PhpMailer;
+namespace Civi\PHPMailer;
 
 use Civi\FlexMailer\Event\SendBatchEvent;
 use Civi\FlexMailer\FlexMailerTask;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Civi\PhpMailer;
+namespace Civi\PHPMailer;
 
 use Civi\FlexMailer\FlexMailerTask;
 use CRM_Phpmailer_ExtensionUtil as E;
@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * @service phpmailer.sender
  */
-class PhpMailerSender extends BasicSender implements EventSubscriberInterface {
+class PHPMailerSender extends BasicSender implements EventSubscriberInterface {
 
   public static function getSubscribedEvents(): array {
     return [
@@ -23,7 +23,7 @@ class PhpMailerSender extends BasicSender implements EventSubscriberInterface {
    * @return mixed
    */
   public function sendMessage(FlexMailerTask $task): mixed {
-    $message = PhpMailerUtil::convertMailParamsToMailer($task->getMailParams());
+    $message = PHPMailerUtil::convertMailParamsToMailer($task->getMailParams());
     try {
       $message->send();
       return static::createOutcomeOk();

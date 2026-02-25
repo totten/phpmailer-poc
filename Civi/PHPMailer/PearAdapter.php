@@ -1,13 +1,13 @@
 <?php
 
-namespace Civi\PhpMailer;
+namespace Civi\PHPMailer;
 
 use PHM7\PHPMailer\PHPMailer\DSNConfigurator;
 
 /**
  *
  */
-class PearPhpMailer extends \Mail {
+class PearAdapter extends \Mail {
 
   /**
    * @var array

@@ -48,7 +48,7 @@ function phpmailer_civicrm_alterMailer(&$mailer): void {
   // extension for real, then it would be worth looking at.
 
   // if ($dsn = _phpmailer_dsn()) {
-  //   $mailer = new \Civi\PhpMailer\PearPhpMailer([
+  //   $mailer = new \Civi\PHPMailer\PearPhpMailer([
   //     'dsn' => $dsn,
   //   ]);
   // }
