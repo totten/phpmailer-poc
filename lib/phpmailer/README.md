@@ -12,7 +12,12 @@ Packages in this folder use namespace-prefixes. Compare:
 
 ## Autoloader
 
-To setup autoloading, enable `vendor-phar@1` mixin.
+Use `pathload()`, as in:
+
+```php
+pathload()->addSearchDir(__DIR__ . '/dist');
+pathload()->addNamespace('phpmailer@7', ['PHM7\\']);
+```
 
 ## Building
 
@@ -28,7 +33,9 @@ Here is how I typically run it:
 nix-shell --run ./lib/phpmailer/build.sh && rm -rf lib/phpmailer/vendor/
 ```
 
-## Limitation
+## Other notes
+
+The library includes a generated file `pathload.json` (from `pathload.json.php`).
 
 In `pathload.json`, you must maintain list of namespaces for embedded packages.
 

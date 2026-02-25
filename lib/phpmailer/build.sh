@@ -21,13 +21,9 @@ fi
 set -ex
 pushd "$LIB_DIR" >> /dev/null
   composer install --prefer-dist --no-progress --no-suggest --no-dev
+  php pathload.json.php > pathload.json
   BOX_ALLOW_XDEBUG=1 php -d phar.readonly=0 "$BOX_BIN" compile -v
   LIB_VER=$(php -r 'echo (require "version.php");')
-
-  if [ ! -d "$DIST_DIR" ]; then
-    mkdir -p "$DIST_DIR"
-  fi
-  mv vendor.phar ../../dist/"${LIB_NAME}@${LIB_VER}.phar"
 
   ## Box needs the PHP INI to specify `phar.readonly=0`. We've being doing this with `php -d` since forever.
   ## It appears that newer versions of Box try to do this automatically (yah!), but the implementation is buggy (arg!).
@@ -42,5 +38,12 @@ pushd "$LIB_DIR" >> /dev/null
   ## `composer/xdebug-handler`.  (Both have a need to manipulate PHP INI.) The flag `BOX_ALLOW_XDEBUG` is defined by their
   ## upstream.  Setting the flag doesn't actually configure xdebug -- rather, it disables PHP INI automanipulations, so that you
   ## are _allowed_ to set PHP INI options (`xdebug.*`, `phar.*`, etc) on your own.
+
+  if [ ! -d "$DIST_DIR" ]; then
+    mkdir -p "$DIST_DIR"
+  fi
+  mv vendor.phar ../../dist/"${LIB_NAME}@${LIB_VER}.phar"
+
+  rm pathload.json
 
 popd >> /dev/null
