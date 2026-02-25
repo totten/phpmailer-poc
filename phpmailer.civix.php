@@ -6,10 +6,10 @@
  * The ExtensionUtil class provides small stubs for accessing resources of this
  * extension.
  */
-class CRM_Phpmailer_ExtensionUtil {
+class CRM_PHPMailer_ExtensionUtil {
   const SHORT_NAME = 'phpmailer';
   const LONG_NAME = 'phpmailer';
-  const CLASS_PREFIX = 'CRM_Phpmailer';
+  const CLASS_PREFIX = 'CRM_PHPMailer';
 
   /**
    * Translate a string using the extension's domain.
@@ -77,7 +77,7 @@ class CRM_Phpmailer_ExtensionUtil {
 
 }
 
-use CRM_Phpmailer_ExtensionUtil as E;
+use CRM_PHPMailer_ExtensionUtil as E;
 
 /**
  * (Delegated) Implements hook_civicrm_config().
