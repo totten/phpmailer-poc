@@ -51,6 +51,6 @@ The `build.sh` script will run `composer` and `box` to produce a suitable PHAR.
 
 Here is how I typically run it:
 
-```
-nix-shell --run ./lib/civicrm-phpmailer/build.sh && rm -rf lib/civicrm-phpmailer/vendor/
+```bash
+nix-shell --run './lib/civicrm-phpmailer/lib.sh build clean'
 ```
