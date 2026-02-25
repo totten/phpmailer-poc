@@ -1,11 +1,13 @@
 <?php
 
 /**
- * Generate the pathload.json file using installed.json.
+ * Generate the pathload.json file using the composer metadta (installed.json).
  *
  * The general aim is to find all of the autoloading rules from the composer
- * packages and then produce equivalent autoloading rules for
+ * packages and then produce equivalent autoloading rules for the
  * namespace-prefixed PHAR.
+ *
+ * To inspect/debug, you can run this script directly on the CLI (`php pathload.json.php`).
  */
 
 /**
@@ -64,3 +66,4 @@ $installed = json_decode(file_get_contents(
 ), TRUE);
 $config = buildPathloadJson($installed, $scoper);
 echo json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+echo "\n";
