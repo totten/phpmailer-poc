@@ -1,6 +1,6 @@
-This folder defines the `phpmailer` PHAR library.  Sources are downloaded
+This folder defines the PHAR library (`civirm-phpmailer@X.phar`).  Sources are downloaded
 via `composer` and moved into an isolated namespace (`PHM7`).  The resulting
-library is tracked as `dist/phpmailer@X.Y.Z.phar`.
+library is tracked as `dist/civicrm-phpmailer@X.Y.Z.phar`.
 
 ## Prefixing
 
@@ -48,5 +48,5 @@ The `build.sh` script will run `composer` and `box` to produce a suitable PHAR.
 Here is how I typically run it:
 
 ```
-nix-shell --run ./lib/phpmailer/build.sh && rm -rf lib/phpmailer/vendor/
+nix-shell --run ./lib/civicrm-phpmailer/build.sh && rm -rf lib/civicrm-phpmailer/vendor/
 ```

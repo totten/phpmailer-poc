@@ -4,7 +4,7 @@ declare(strict_types = 1);
 // phpcs:disable PSR1.Files.SideEffects
 require_once 'phpmailer.civix.php';
 pathload()->addSearchDir(__DIR__ . '/dist');
-pathload()->addNamespace('phpmailer@7', ['PHM7\\']);
+pathload()->addNamespace('civicrm-phpmailer@7', ['PHM7\\']);
 
 // phpcs:enable
 
