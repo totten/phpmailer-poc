@@ -17,5 +17,6 @@
     "git-version": "package_version",
     "main": false,
     "output": "vendor.phar",
+    "shebang": false,
     "stub": true
 }
