@@ -34,8 +34,12 @@ compsoer remove baz/quux
 composer require whiz/bang
 ```
 
-When you test the new libraries, you may find that you need to fine-tune the
-prefixing rules (`scoper.inc.php`).
+When you test the new libraries, you may find that you need to fine-tune:
+
+* The list of files/directories/filters (`box.json`). By default, this
+  includes most `*.php` files from `vendor/` - but other may require tweaking.
+* The namespace-prefixing (`scoper.inc.php`). By default, this skips
+  prefixing some top-level packages (like `Psr\*`).
 
 ## Building
 
