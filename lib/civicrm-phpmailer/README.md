@@ -1,4 +1,4 @@
-This folder defines the PHAR library (`civirm-phpmailer@X.phar`).  Sources are downloaded
+This folder defines the PHAR library (`civicrm-phpmailer@X.phar`).  Sources are downloaded
 via `composer` and moved into an isolated namespace (`PHM7`).  The resulting
 library is tracked as `dist/civicrm-phpmailer@X.Y.Z.phar`.
 
@@ -15,7 +15,7 @@ To use the PHAR library, register via Pathload:
 
 ```php
 pathload()->addSearchDir(__DIR__ . '/dist');
-pathload()->addNamespace('phpmailer@7', ['PHM7\\']);
+pathload()->addNamespace('civicrm-phpmailer@7', ['PHM7\\']);
 ```
 
 When any classes from `PHM7\\` are used, the PHAR file is mounted.  Within
@@ -24,11 +24,11 @@ nested library.
 
 ## Managing packages
 
-To add, remove, or update the packages within `phpmailer.phar`, you can use
+To add, remove, or update the packages within `civicrm-phpmailer.phar`, you can use
 `composer` commands, e.g.
 
 ```bash
-cd lib/phpmailer
+cd lib/civicrm-phpmailer
 composer update foo/bar
 compsoer remove baz/quux
 composer require whiz/bang
