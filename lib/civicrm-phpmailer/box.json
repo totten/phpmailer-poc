@@ -1,10 +1,14 @@
 {
     "chmod": "0644",
     "check-requirements": false,
+    "exclude-composer-files": false,
     "files": [
+        "composer.json",
+        "composer.lock",
         "pathload.json"
     ],
     "directories": [
+        "vendor/composer"
     ],
     "finder": [
         {
