@@ -15,6 +15,8 @@ use CRM_Phpmailer_ExtensionUtil as E;
  */
 function phpmailer_civicrm_config(\CRM_Core_Config $config): void {
   _phpmailer_civix_civicrm_config($config);
+  pathload()->addSearchDir(__DIR__ . '/dist');
+  pathload()->addNamespace('phpmailer@7', ['PHM7\\']);
 }
 
 /**
