@@ -30,3 +30,4 @@ NOTE: If you do not configure `CIVICRM_PHPMAILER_DSN`, then the system will cont
   may have direct references to PEAR Mail. To convert them, we would need an adapter that
   allows PEAR Mail-consumers to delegate to PHPMailer. (There's a partial/draft implementation using hook_alterMailer.)
 * The DSN requires extra setup. You could read `mailing_backend` and set this automatically.
+* Sends an extra header (`X-CiviMail-Engine: SymfonyMailer`) which should probably be removed. But helps you confirm that SymfonyMailer was used.

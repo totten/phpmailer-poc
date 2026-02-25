@@ -54,6 +54,8 @@ class PHPMailerUtil {
       }
     }
 
+    $mail->addCustomHeader('X-CiviMail-Engine', 'PHPMailer'); // REVERT
+
     return $mail;
   }
 
