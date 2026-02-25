@@ -8,8 +8,10 @@ function absdirname() {
   popd >> /dev/null
 }
 
-PRJDIR=$(absdirname "$0")
+LIB_DIR=$(absdirname "$0")
+LIB_NAME=$(basename "$LIB_DIR")
 BOX_BIN=$(which box)
+DIST_DIR="$LIB_DIR/../../dist"
 
 if [ ! -f "$BOX_BIN" ]; then
   echo >&2 "Failed to find: box"
@@ -17,9 +19,15 @@ if [ ! -f "$BOX_BIN" ]; then
 fi
 
 set -ex
-pushd "$PRJDIR" >> /dev/null
+pushd "$LIB_DIR" >> /dev/null
   composer install --prefer-dist --no-progress --no-suggest --no-dev
   BOX_ALLOW_XDEBUG=1 php -d phar.readonly=0 "$BOX_BIN" compile -v
+  LIB_VER=$(php -r 'echo (require "version.php");')
+
+  if [ ! -d "$DIST_DIR" ]; then
+    mkdir -p "$DIST_DIR"
+  fi
+  mv vendor.phar ../../dist/"${LIB_NAME}@${LIB_VER}.phar"
 
   ## Box needs the PHP INI to specify `phar.readonly=0`. We've being doing this with `php -d` since forever.
   ## It appears that newer versions of Box try to do this automatically (yah!), but the implementation is buggy (arg!).

@@ -1,5 +1,5 @@
 {
-  "name": "civicrm/phpmailer-packages",
+  "name": "civicrm-lib/phpmailer",
   "authors": [
     {
       "name": "Tim Otten",

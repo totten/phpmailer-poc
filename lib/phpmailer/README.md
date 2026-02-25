@@ -25,15 +25,16 @@ The `build.sh` script will run `composer` and `box` to produce a suitable `vendo
 Here is how I typically run it:
 
 ```
-nix-shell --run ./packages/build.sh && rm -rf packages/vendor/
+nix-shell --run ./lib/phpmailer/build.sh && rm -rf lib/phpmailer/vendor/
 ```
 
 ## Limitation
 
-In `pathload.main.php`, you must maintain list of namespaces for embedded packages.
+In `pathload.json`, you must maintain list of namespaces for embedded packages.
 
-The build-script could updated to prepare `pathload.main.php` or `pathload.json` automatically...
+The build-script could updated to prepare `pathload.json` automatically...
 
-Alternatively, you can try to daisy-chain with composer-generated `vendor/autoload.php` because of an ordering issue.
-(In pathload-poc, `loadClass()` calls `loadPackagesByNamespace()` - but the load operation is already active.  This is
-fine for the autoloading rules defined in `pathload.json`, but daisy-chaining at that precise moment is tricky.)
+Alternatively, you can try to daisy-chain (from `pathload.main.php` to composer-generated `vendor/autoload.php`), but
+there's an ordering issue.  (In pathload-poc, `loadClass()` calls `loadPackagesByNamespace()` - but the load operation
+is already active.  This is fine for the autoloading rules defined in `pathload.json`, but daisy-chaining at that
+precise moment is tricky.)
