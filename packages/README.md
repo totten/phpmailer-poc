@@ -12,11 +12,7 @@ Packages in this folder use namespace-prefixes. Compare:
 
 ## Autoloader
 
-To setup autoloading, use this file:
-
-```php
-require_once __DIR__ . '/packages/autoload.php';
-```
+To setup autoloading, enable `vendor-phar@1` mixin.
 
 ## Building
 
@@ -32,3 +28,13 @@ Here is how I typically run it:
 cd packages
 nix-shell --run ./build.sh && rm -rf vendor/
 ```
+
+## Limitation
+
+In `pathload.main.php`, you must maintain list of namespaces for embedded packages.
+
+The build-script could updated to prepare `pathload.main.php` or `pathload.json` automatically...
+
+Alternatively, you can try to daisy-chain with composer-generated `vendor/autoload.php` because of an ordering issue.
+(In pathload-poc, `loadClass()` calls `loadPackagesByNamespace()` - but the load operation is already active.  This is
+fine for the autoloading rules defined in `pathload.json`, but daisy-chaining at that precise moment is tricky.)

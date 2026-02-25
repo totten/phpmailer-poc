@@ -15,7 +15,6 @@ use CRM_Phpmailer_ExtensionUtil as E;
  */
 function phpmailer_civicrm_config(\CRM_Core_Config $config): void {
   _phpmailer_civix_civicrm_config($config);
-  require_once __DIR__ . '/packages/autoload.php';
 }
 
 /**

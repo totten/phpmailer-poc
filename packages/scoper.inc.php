@@ -6,4 +6,5 @@
 return [
   'prefix' => 'PHM7',
   'exclude-namespaces' => ['Psr'],
+  'exclude-functions' => ['pathload'],
 ];

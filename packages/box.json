@@ -1,5 +1,9 @@
 {
     "chmod": "0644",
+    "check-requirements": false,
+    "files": [
+        "pathload.json"
+    ],
     "directories": [
     ],
     "finder": [
