@@ -1,6 +1,6 @@
-# phpmailer
+# phpmailer (proof of concept)
 
-Rplaces the delivery backend for CiviCRM mailings -- switching from PEAR Mail to PHPMailer.  In theory, PHPMailer is
+Replaces the delivery backend for CiviCRM mailings -- switching from PEAR Mail to PHPMailer.  In theory, PHPMailer is
 updated more frequently and may have more compatibility fixes.
 
 This implementation was written circa Feb 2026 to help assess utility and feasibility.  Assume that it is incomplete.
